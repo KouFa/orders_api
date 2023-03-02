@@ -53,4 +53,9 @@ Outputs:
   CreateOrdersAPI:
     Description: "API Gateway endpoint for creating orders"
     Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Stage/orders"
-
+  CreateOrderFunction:
+    Description: "Create Order Function ARN"
+    Value: !GetAtt CreateOrderFunction.Arn
+  CreateOrderFunctionIamRole:
+    Description: "Create Order Function IAM Role ARN"
+    Value: !GetAtt CreateOrderFunctionRole.Arn
