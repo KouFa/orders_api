@@ -49,4 +49,8 @@ Resources:
         - DynamoDBReadPolicy:
             TableName: !Ref OrdersTable
 
+Outputs:
+  CreateOrdersAPI:
+    Description: "API Gateway endpoint for creating orders"
+    Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Stage/orders"
 
