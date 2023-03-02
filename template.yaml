@@ -17,8 +17,9 @@ Resources:
   OrdersTable:
     Type: AWS::Serverless::SimpleTable
     Properties:
-      Name: id
-      Type: Number
+      PrimaryKey:
+        Name: id
+        Type: Number
   CreateOrderFunction:
     Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
     Properties:
