@@ -30,7 +30,9 @@ Resources:
           Properties:
             Path: /orders
             Method: POST
-
+      Policies:
+        - DynamoDBCrudPolicy:
+            TableName: !Ref OrdersTable
   ReadOrderFunction:
     Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
     Properties:
@@ -42,5 +44,8 @@ Resources:
           Properties:
             Path: /orders/{id}
             Method: GET
+      Policies:
+        - DynamoDBReadPolicy:
+            TableName: !Ref OrdersTable
 
 
